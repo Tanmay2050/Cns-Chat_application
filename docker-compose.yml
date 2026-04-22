@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: cipherlink
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/cipherlink
+      SECRET_KEY: change-me-in-production
+      JWT_SECRET_KEY: change-me-jwt
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

@@ -1,0 +1,90 @@
+.page { min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg-secondary); padding:24px; position:relative; }
+.themeBtn { position:absolute; top:20px; right:20px; background:var(--bg-primary); border:1px solid var(--border); border-radius:50%; width:40px; height:40px; font-size:18px; display:flex; align-items:center; justify-content:center; }
+.card { background:var(--bg-primary); border-radius:var(--radius); padding:40px; width:100%; max-width:420px; box-shadow:var(--shadow); border:1px solid var(--border); }
+.logo { font-size:48px; text-align:center; margin-bottom:12px; }
+.title { text-align:center; font-size:24px; font-weight:700; color:var(--accent); }
+.subtitle { text-align:center; color:var(--text-secondary); font-size:14px; margin-bottom:28px; }
+.form { display:flex; flex-direction:column; gap:16px; }
+.field { display:flex; flex-direction:column; gap:6px; }
+.field label { font-size:13px; font-weight:600; color:var(--text-secondary); }
+.field input { padding:12px 14px; border:1.5px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); font-size:14px; transition:border 0.2s; }
+.field input:focus { outline:none; border-color:var(--accent); }
+.btn { background:var(--accent); color:white; border:none; border-radius:var(--radius-sm); padding:13px; font-size:15px; font-weight:600; margin-top:4px; transition:background 0.2s; }
+.btn:hover:not(:disabled) { background:var(--accent-hover); }
+.btn:disabled { opacity:0.6; cursor:not-allowed; }
+.error { background:#fee2e2; color:#dc2626; padding:10px 14px; border-radius:var(--radius-sm); font-size:13px; }
+.info { background:var(--accent-light); color:var(--accent); padding:10px 14px; border-radius:var(--radius-sm); font-size:13px; }
+.link { text-align:center; margin-top:20px; font-size:14px; color:var(--text-secondary); }
+.link a { color:var(--accent); font-weight:600; text-decoration:none; }
+.secBadge { margin-top:20px; text-align:center; font-size:11px; color:var(--text-secondary); background:var(--bg-secondary); padding:8px; border-radius:6px; }
+/*
+ * Auth.module.css — ADDITIONS
+ * Append these rules to the existing Auth.module.css
+ */
+
+/* Key-missing warning box on login page */
+.keyMissingBox {
+  background: #fefce8;
+  border: 1px solid #fbbf24;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #78350f;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.keyMissingBox strong {
+  font-size: 14px;
+  color: #92400e;
+}
+
+.keyMissingBox ul {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.keyMissingBox a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* File input styled as a button */
+.importLabel {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 8px 0 0;
+  border-top: 1px solid #fcd34d;
+}
+
+.fileInput {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #78350f;
+}
+
+/* Secondary button (used on the backup download screen) */
+.btnSecondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.btnSecondary:hover {
+  background: var(--bg-tertiary);
+}
